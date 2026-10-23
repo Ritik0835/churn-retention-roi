@@ -1,0 +1,4 @@
+strategy,customers_targeted,targeted_share_pct,expected_customers_saved,expected_revenue_kept_proxy,offer_cost_total,net_expected_value
+Target everyone,1409,100.0,75.04,33129.24,14090.0,19039.24
+Top 20% by churn probability,282,20.01,37.43,17626.65,2820.0,14806.65
+Top 20% by expected value,282,20.01,35.97,18744.23,2820.0,15924.23
