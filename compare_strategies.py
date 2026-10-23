@@ -22,13 +22,19 @@ df["expected_value"] = (
 # Select the top 20%, rounding up to a whole customer
 top_n = math.ceil(len(df) * 0.20)
 
+
+positive_value = df[df["expected_value"] > 0]
+
 strategies = {
     "Target everyone": df.copy(),
     "Top 20% by churn probability": (
         df.nlargest(top_n, "churn_probability").copy()
     ),
-    "Top 20% by expected value": (
-        df.nlargest(top_n, "expected_value").copy()
+    "Top 20% by positive expected value": (
+        positive_value.nlargest(
+            min(top_n, len(positive_value)),
+            "expected_value"
+        ).copy()
     ),
 }
 

@@ -33,6 +33,12 @@ All monetary values use the dataset's currency convention.
 - Expected-value targeting considers both churn probability and
   monthly charges, so it prioritizes customers with higher estimated
   value to retain.
+- Expected-value targeting excludes customers whose estimated expected
+  net value is zero or negative.
+- Eligible customers are ranked from highest to lowest expected value.
+- The targeting quota is capped at 20% of the test set; if fewer
+  customers have positive expected value, target only those eligible
+  customers.
 
 ## Limitations
 
